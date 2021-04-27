@@ -1,0 +1,70 @@
+:root {
+    --pokeRed: #CE1212;
+    --pokeBlack: #1B1717;
+    --pokeWhite: #EEEEEE;
+}
+
+.pokeball {
+  width: 80px;
+  height: 80px;
+  background: var(--pokeBlack);
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pokeball div{
+    padding: inherit;
+    margin: inherit;
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+}
+
+.layer1 {
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 90%;
+    height: 90%;
+    background: var(--pokeRed);
+    background: linear-gradient(180deg, var(--pokeRed) 50%, var(--pokeWhite) 50%);
+}
+.layer1 div:not(.layer2){
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+.layer2 {
+    position: absolute;
+    background: var(--pokeBlack);
+    width: 75px;
+    height: 16%;
+}
+
+.layer3 {
+    position: relative;
+    background: var(--pokeBlack);
+    width: 45%;
+    height: 45%;
+}
+.layer4 {
+    background: var(--pokeWhite);
+    width: 70%;
+    height: 70%;
+}
+
+.layer5 {
+    background: var(--pokeBlack);
+    width: 80%;
+    height: 80%;
+}
+.layer6 {
+    background: var(--pokeWhite);
+    width: 85%;
+    height: 85%;
+}

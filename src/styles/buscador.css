@@ -1,0 +1,17 @@
+.buscador-content {
+    display: flex;
+}
+
+.buscar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+.mostrar {
+    width: auto;
+}
+.status {
+    height: 20px;
+}
