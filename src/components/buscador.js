@@ -3,11 +3,8 @@ import '../styles/buscador.css';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Card  from './Card';
-import { useFetch } from '../hooks/useFetch';
 import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import convertir from './convertir';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,29 +22,25 @@ const useStyles = makeStyles((theme) => ({
 const Buscador = () => {
     const classes = useStyles();
 
-    const [pokemon, setPokemon] = useState({ nombre: '', mensaje: '', render: null });
+    const [pokemon, setPokemon] = useState({ nombre: '', mensaje: '', pika: 'charizard'});
 
-    const { nombre, mensaje, render } = pokemon;
-
-    const { data, loading } = useFetch(`https://pokeapi.co/api/v2/pokemon/${nombre.toLowerCase()}`);
+    const { nombre, mensaje,pika } = pokemon;
 
     const onChange = ({ target }) => {
-        setPokemon({ ...pokemon, nombre: target.value })
+        setPokemon({ ...pokemon, nombre: target.value, mensaje: '' })
     }
 
     const onClick = () => {
         if (nombre !== '') {
-            if (data) {
-                const info = convertir(data)
-                setPokemon({ ...pokemon, mensaje: '** We found it! **', render: <Card info={info} key='buscador'/> })
-            } else {
-                setPokemon({ ...pokemon, mensaje: "** We can't find it :c **", render: null })
-            }
+           setPokemon({...pokemon, pika: nombre})
         } else {
-            setPokemon({ ...pokemon, mensaje: '** Empty field **', render: null })
+            setMensaje('** Empty Field!!! **')
         }
     }
 
+    const setMensaje = mensaje => {
+        setPokemon({...pokemon, mensaje: mensaje})
+    }
     return (
         <div className="buscador-content">
             <div className="buscar">
@@ -66,7 +59,7 @@ const Buscador = () => {
                 <p className="status">{mensaje}</p>
             </div>
             <div className="mostrar">
-                {loading ? <CircularProgress size={72} /> : render}
+                <Card pokemon={pika}/>
             </div>
         </div>
     )

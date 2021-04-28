@@ -67,3 +67,13 @@
     width: 85%;
     height: 85%;
 }
+@media (max-width: 1024px) {
+    .pokeball {
+        width: 70px;
+        height: 70px;
+    }
+    .layer2 {
+        width: 68px;
+        height: 10px;
+    }
+}

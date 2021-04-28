@@ -1,9 +1,19 @@
 import '../styles/App.css';
 import Pokeball from './pokeball';
 import Buscador from './buscador'
-import CardList from './CardList';
+import Card from './Card';
 
 function App() {
+  
+  const generarCartas = () => {
+    let i = 1;
+    let cards=[];
+    while (i<=204) {
+      cards = [...cards, <Card pokemon={i+""} key={i}/>];
+      i++
+    }
+    return cards;
+  }
 
   return (
     <div className="container">
@@ -26,7 +36,7 @@ function App() {
         <p>Designed by Cristian Medina</p>
         <hr className="linea " width="100%" />
         <div className="lista-de-cartas">
-          {/* <CardList /> */}
+          {generarCartas()}
         </div>
       </main>
       <footer className="footer">
