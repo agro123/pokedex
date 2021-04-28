@@ -22,9 +22,9 @@ const useStyles = makeStyles((theme) => ({
 const Buscador = () => {
     const classes = useStyles();
 
-    const [pokemon, setPokemon] = useState({ nombre: '', mensaje: '', pika: 'charizard'});
+    const [pokemon, setPokemon] = useState({ nombre: '', mensaje: '',render: ''});
 
-    const { nombre, mensaje,pika } = pokemon;
+    const { nombre, mensaje, render } = pokemon;
 
     const onChange = ({ target }) => {
         setPokemon({ ...pokemon, nombre: target.value, mensaje: '' })
@@ -32,7 +32,7 @@ const Buscador = () => {
 
     const onClick = () => {
         if (nombre !== '') {
-           setPokemon({...pokemon, pika: nombre})
+           setPokemon({...pokemon, render:<Card pokemon={nombre} key="show"/> })
         } else {
             setMensaje('** Empty Field!!! **')
         }
@@ -59,7 +59,7 @@ const Buscador = () => {
                 <p className="status">{mensaje}</p>
             </div>
             <div className="mostrar">
-                <Card pokemon={pika}/>
+                {render}
             </div>
         </div>
     )

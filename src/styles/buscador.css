@@ -8,12 +8,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 315px;
 }
 .mostrar {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    height: 300px;
+    width: 200px;
 }
 .status {
     color: red;

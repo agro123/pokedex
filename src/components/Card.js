@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import '../styles/card.css'
 import { useFetch } from '../hooks/useFetch';
 import CircularProgress from '@material-ui/core/CircularProgress';
+
 const card = {
     nombre: 'Not found',
     imagen: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/104.png',
@@ -14,25 +15,25 @@ const card = {
 }
 const convertir = (data) => {
     const info = {
-        nombre: data.forms[0].name || 'no tiene',
-        imagen: data.sprites.front_default || 'no tiene',
-        tipo: data.types[0].type.name || 'no tiene',
-        hp: data.stats[0].base_stat || 'no tiene',
-        defense: data.stats[2].base_stat || 'no tiene',
-        attack: data.stats[1].base_stat || 'no tiene',
-        speed: data.stats[5].base_stat || 'no tiene',
+        nombre: data.forms[0].name,
+        imagen: data.sprites.front_default,
+        tipo: data.types[0].type.name,
+        hp: data.stats[0].base_stat,
+        defense: data.stats[2].base_stat,
+        attack: data.stats[1].base_stat,
+        speed: data.stats[5].base_stat,
     }
     return info
 }
 const Card = ({ pokemon = 'charizard' }) => {
-
-    const { data, loading } = useFetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}`);
+    const { data,loading } = useFetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}`);
 
     const carta = data => {
         let info = card;
         if (data) {
             info = convertir(data);
         }
+        
         const { nombre, imagen, tipo, hp, defense, attack, speed } = info;
 
         return (

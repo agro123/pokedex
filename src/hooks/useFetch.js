@@ -8,7 +8,7 @@ export const useFetch = (url) => {
             const resp = await fetch(url)
             const d = await resp.json()
             if (d) {
-                setResult({ loading: false, data: d })
+               setTimeout(setResult({ loading: false, data: d }),1000)
             }
         } catch (e) {
             console.log('Ocurrio un error:', e)

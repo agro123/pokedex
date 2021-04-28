@@ -4,7 +4,6 @@ import Buscador from './buscador'
 import Card from './Card';
 
 function App() {
-  
   const generarCartas = () => {
     let i = 1;
     let cards=[];
@@ -39,9 +38,6 @@ function App() {
           {generarCartas()}
         </div>
       </main>
-      <footer className="footer">
-
-      </footer>
     </div>
   );
 }
