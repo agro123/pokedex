@@ -3,7 +3,6 @@
     --pokeBlack: #1B1717;
     --pokeWhite: #EEEEEE;
 }
-
 .pokeball {
   width: 80px;
   height: 80px;
@@ -43,7 +42,7 @@
     position: absolute;
     background: var(--pokeBlack);
     width: 75px;
-    height: 16%;
+    height: 16px;
 }
 
 .layer3 {

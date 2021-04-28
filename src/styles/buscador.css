@@ -1,5 +1,6 @@
 .buscador-content {
     display: flex;
+    width: 100%;
 }
 
 .buscar {
@@ -8,9 +9,14 @@
     align-items: center;
     justify-content: center;
     height: 300px;
+    width: 60%;
 }
 .mostrar {
-    width: auto;
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+
 }
 .status {
     height: 20px;

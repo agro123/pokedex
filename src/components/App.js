@@ -1,8 +1,10 @@
 import '../styles/App.css';
-import { Pokeball } from './pokeball';
-import { Buscador } from './buscador'
+import Pokeball from './pokeball';
+import Buscador from './buscador'
+import CardList from './CardList';
 
 function App() {
+
   return (
     <div className="container">
       <header className="header">
@@ -23,6 +25,9 @@ function App() {
         <Buscador />
         <p>Designed by Cristian Medina</p>
         <hr className="linea " width="100%" />
+        <div className="lista-de-cartas">
+          {/* <CardList /> */}
+        </div>
       </main>
       <footer className="footer">
 
